@@ -9,16 +9,18 @@
 
     <style>
         body {
-            @yield('background');
+            @yield('background')
+
+            ;
         }
     </style>
 </head>
 
 <body>
-    
-        @if (Request::is('books*'))
-            @include('partials.navbar')
-        @endif
+
+    @if (Request::is('books*'))
+        @include('partials.navbar')
+    @endif
 
     <main class="py-4">
         @yield('content')

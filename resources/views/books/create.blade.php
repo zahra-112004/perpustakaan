@@ -7,7 +7,7 @@
         <form action="{{ route('books.store') }}" method="POST">
             @csrf
 
-            {{-- Judul --}}
+
             <div class="mb-3">
                 <label for="title" class="form-label">Judul Buku</label>
                 <input type="text" name="title" class="form-control @error('title') is-invalid @enderror"
@@ -17,7 +17,7 @@
                 @enderror
             </div>
 
-            {{-- Tahun --}}
+
             <div class="mb-3">
                 <label for="year" class="form-label">Tahun Terbit</label>
                 <input type="number" name="year" class="form-control @error('year') is-invalid @enderror"
@@ -27,7 +27,7 @@
                 @enderror
             </div>
 
-            {{-- Penulis --}}
+
             <div class="mb-3">
                 <label for="author" class="form-label">Penulis</label>
                 <input type="text" name="author" class="form-control @error('author') is-invalid @enderror"
@@ -36,7 +36,7 @@
                     <div class="invalid-feedback">{{ $message ?: 'Penulis wajib diisi' }}</div>
                 @enderror
             </div>
-            {{-- Penerbit --}}
+
             <div class="mb-3">
                 <label for="author" class="form-label">Penerbit</label>
                 <input type="text" name="author" class="form-control @error('author') is-invalid @enderror"
@@ -46,7 +46,7 @@
                 @enderror
             </div>
 
-            {{-- Deskripsi --}}
+
             <div class="mb-3">
                 <label for="description" class="form-label">Deskripsi</label>
                 <textarea name="description" class="form-control @error('description') is-invalid @enderror" rows="4">{{ old('description') }}</textarea>

@@ -4,13 +4,13 @@
     <div class="container">
         <h1 class="mb-4">Daftar Buku</h1>
 
-        {{-- Tombol Kembali ke Home dan Tambah --}}
+
         <div class="mb-3 d-flex justify-content-between">
             <a href="{{ route('home') }}" class="btn btn-secondary">🏠 Kembali ke Home</a>
             <a href="{{ route('books.create') }}" class="btn btn-success">+ Tambah Buku</a>
         </div>
 
-        {{-- Daftar Buku --}}
+
         <div class="card">
             <div class="card-header">Daftar Buku</div>
             <div class="card-body">
@@ -60,7 +60,7 @@
         </div>
     </div>
 
-    {{-- SweetAlert --}}
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     @if (session('success'))
