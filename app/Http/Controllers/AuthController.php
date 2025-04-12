@@ -26,7 +26,7 @@ class AuthController extends Controller
 
     if (Auth::attempt(['username' => $request->username, 'password' => $request->password])) {
         $request->session()->regenerate();
-        return redirect()->intended('/home'); // Pastikan ini mengarah ke '/home'
+        return redirect()->intended('/home'); 
     }
 
     return back()->withErrors([
@@ -44,14 +44,14 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
-        // Validasi data input
+        
         $request->validate([
             'username' => 'required|string|max:255|unique:users,username',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|string|min:6', // Password harus sama dengan konfirmasi password
+            'password' => 'required|string|min:6', 
         ]);
 
-        // Menyimpan pengguna baru
+        
         $user = User::create([
             'username' => $request->username,
             'email' => $request->email,
@@ -59,10 +59,10 @@ class AuthController extends Controller
 
         ]);
 
-        // Login otomatis setelah register
+        
         Auth::login($user);
 
-        return redirect()->route('login');  // Arahkan ke halaman home setelah registrasi
+        return redirect()->route('login'); 
     }
 
     public function logout(Request $request)
